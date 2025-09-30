@@ -57,19 +57,6 @@ fn matches_criteria(node: &HtmlNode, criteria: &SearchCriteria) -> bool {
     }
 }
 
-
-pub fn find_first<'a>(html_buffer: &'a HtmlNode, value: &SearchCriteria) -> Option<&'a HtmlNode> {
-    if matches_criteria(html_buffer, value) {
-        return Some(html_buffer);
-    }
-    for child in &html_buffer.children {
-        if let Some(found) = find_first(child, value) {
-            return Some(found);
-        }
-    }
-    None
-}
-
 pub fn find_by_tag<'a>(html_buffer: &'a HtmlNode, tag_name: &str) -> Vec<&'a HtmlNode> {
     find(html_buffer, &SearchCriteria::Tag(tag_name.to_string()))
 }

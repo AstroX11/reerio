@@ -6,6 +6,7 @@ pub struct HtmlNode {
     pub text: Option<String>,
 }
 
+#[allow(dead_code)]
 /// Static HTML tags reference (all HTML5 tags)
 pub struct HtmlTags {
     // Document metadata
@@ -152,6 +153,7 @@ pub struct HtmlTags {
     pub template: &'static str,
 }
 
+#[allow(dead_code)]
 /// A single constant instance holding all tag names
 pub const TAGS: HtmlTags = HtmlTags {
     // Document metadata
